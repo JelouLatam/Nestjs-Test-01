@@ -79,19 +79,19 @@ Ya habiendo iniciado la aplicación puede consultar la documentación de la API 
 Puede probar la aplicación utilizando los distintos endpoints y requests, asumiento que ha lanzado la aplicación localmente, ya sea por despliegue normal o por Docker.
 
 - **GET all tasks**
-  - Método: GET
-  - Endpoint: `http://localhost:3000/tasks`
-  - Respuesta esperada: Debería esperearse la lista de tareas en la base de datos en formato json.
+  - **Método**: GET
+  - **Endpoint**: `http://localhost:3000/tasks`
+  - **Respuesta esperada**: Debería esperearse la lista de tareas en la base de datos en formato json.
   
 - **GET a task by id**
-  - Método: GET
-  - Endpoint: `http://localhost:3000/tasks/:id`, example: `http://localhost:3000/tasks/10`
-  - Respuesta esperada: Si la tarea existe, retornará la tarea encontrada en la base de datos. En caso contrario botará error 404.
+  - **Método**: GET
+  - **Endpoint**: `http://localhost:3000/tasks/:id`, example: `http://localhost:3000/tasks/10`
+  - **Respuesta esperada**: Si la tarea existe, retornará la tarea encontrada en la base de datos. En caso contrario botará error 404.
 
 - **Create a new task**
-  - Método: POST
-  - Endpoint: `http://localhost:3000/tasks`
-  - Request body:
+  - **Método**: POST
+  - **Endpoint**: `http://localhost:3000/tasks`
+  - **Request body**:
   ```javascript
   {
     "title": "Wash Dishes",
@@ -99,13 +99,13 @@ Puede probar la aplicación utilizando los distintos endpoints y requests, asumi
     "dueDate": "2024-01-26"
   }
   ```
-  - Respuesta esperada: Se crea la tarea en la base de datos y la aplicación responde con la tarea recién agregada.
-  - Notas: Los campos no pueden estar vacíos o retornará error de Bad Request. El campo de dueDate debe estar en formato yyyy-mm-dd, y la fecha no puede ser igual o anterior a la fecha actual.
+  - **Respuesta esperada**: Se crea la tarea en la base de datos y la aplicación responde con la tarea recién agregada.
+  - **Notas**: Los campos no pueden estar vacíos o retornará error de Bad Request. El campo de dueDate debe estar en formato yyyy-mm-dd, y la fecha no puede ser igual o anterior a la fecha actual.
 
 - **Update a task**
-  - Método: PATCH
-  - Endpoint: `http://localhost:3000/tasks/:id`, example `http://localhost:3000/tasks/12`
-  - Request body:
+  - **Método**: PATCH
+  - **Endpoint**: `http://localhost:3000/tasks/:id`, example `http://localhost:3000/tasks/12`
+  - **Request body**:
   ```javascript
   {
     "title": "Do something awesome",
@@ -113,10 +113,10 @@ Puede probar la aplicación utilizando los distintos endpoints y requests, asumi
     "dueDate": "2024-01-30"
   }
   ```
-  - Respuesta esperada: Se actualizará la tarea en la base de datos y la aplicación responde con la tarea recién actualizada si es que la tarea con dicho id existe. Caso contrario retornará 404.
-  - Notas: Los campos no pueden estar vacíos o retornará error de Bad Request. El campo de dueDate debe estar en formato yyyy-mm-dd, y la fecha no puede ser igual o anterior a la fecha actual.
+  - **Respuesta** esperada: Se actualizará la tarea en la base de datos y la aplicación responde con la tarea recién actualizada si es que la tarea con dicho id existe. Caso contrario retornará 404.
+  - **Notas**: Los campos no pueden estar vacíos o retornará error de Bad Request. El campo de dueDate debe estar en formato yyyy-mm-dd, y la fecha no puede ser igual o anterior a la fecha actual.
 
 - **Delete a task**
-  - Método: DELETE
-  - Endpoint: `http://localhost:3000/tasks/:id`, example `http://localhost:3000/tasks/12`
-  - Respuesta esperada: Si la tarea existe, se eliminará de la base de datos y retornará la tarea eliminada. En caso que no exista, retornará 404.
+  - **Método**: DELETE
+  - **Endpoint**: `http://localhost:3000/tasks/:id`, example `http://localhost:3000/tasks/12`
+  - **Respuesta esperada**: Si la tarea existe, se eliminará de la base de datos y retornará la tarea eliminada. En caso que no exista, retornará 404.
