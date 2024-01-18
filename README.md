@@ -57,9 +57,9 @@ Durante la revisión de tu proyecto, nos enfocaremos en los siguientes aspectos:
 
 ¡Buena suerte y estamos ansiosos por revisar tu trabajo!
 
-### Instrucciones de ejecución y pruebas de la aplicación
+## Instrucciones de ejecución y pruebas de la aplicación
 
-## Ejecución de la aplicación
+### Ejecución de la aplicación
 
 Primero, en la raíz del proyecto deberá crear el archivo .env y agregar en este lo siguiente:
 
@@ -74,7 +74,7 @@ Puede elegir entre desplegarla normalmente o desplegarla con Docker.
 
 Ya habiendo iniciado la aplicación puede consultar la documentación de la API en la siguiente URL: `http://localhost:3000/api`.
 
-## Pruebas de la aplicación
+### Pruebas de la aplicación
 
 Puede probar la aplicación utilizando los distintos endpoints y requests, asumiento que ha lanzado la aplicación localmente, ya sea por despliegue normal o por Docker.
 
