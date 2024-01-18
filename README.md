@@ -92,11 +92,13 @@ Puede probar la aplicación utilizando los distintos endpoints y requests, asumi
   - Método: POST
   - Endpoint: `http://localhost:3000/tasks`
   - Request body:
+  ```javascript
   {
     "title": "Wash Dishes",
     "description": "Use different sponges for glasses and dishes in general.",
     "dueDate": "2024-01-26"
   }
+  ```
   - Respuesta esperada: Se crea la tarea en la base de datos y la aplicación responde con la tarea recién agregada.
   - Notas: Los campos no pueden estar vacíos o retornará error de Bad Request. El campo de dueDate debe estar en formato yyyy-mm-dd, y la fecha no puede ser igual o anterior a la fecha actual.
 
@@ -104,11 +106,13 @@ Puede probar la aplicación utilizando los distintos endpoints y requests, asumi
   - Método: PATCH
   - Endpoint: `http://localhost:3000/tasks/:id`, example `http://localhost:3000/tasks/12`
   - Request body:
+  ```javascript
   {
     "title": "Do something awesome",
     "description": "Find something awesome to do and JUST DO IT!",
     "dueDate": "2024-01-30"
   }
+  ```
   - Respuesta esperada: Se actualizará la tarea en la base de datos y la aplicación responde con la tarea recién actualizada si es que la tarea con dicho id existe. Caso contrario retornará 404.
   - Notas: Los campos no pueden estar vacíos o retornará error de Bad Request. El campo de dueDate debe estar en formato yyyy-mm-dd, y la fecha no puede ser igual o anterior a la fecha actual.
 
