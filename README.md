@@ -85,7 +85,7 @@ Puede probar la aplicación utilizando los distintos endpoints y requests, asumi
   
 - **GET a task by id**
   - Método: GET
-  - Endpoint: `http://localhost:3000/tasks/:id`, example: `http://localhost:3000/tasks/1`
+  - Endpoint: `http://localhost:3000/tasks/:id`, example: `http://localhost:3000/tasks/10`
   - Respuesta esperada: Si la tarea existe, retornará la tarea encontrada en la base de datos. En caso contrario botará error 404.
 
 - **Create a new task**
@@ -102,7 +102,7 @@ Puede probar la aplicación utilizando los distintos endpoints y requests, asumi
 
 - **Update a task**
   - Método: PATCH
-  - Endpoint: `http://localhost:3000/tasks/:id`, example `http://localhost:3000/tasks/1`
+  - Endpoint: `http://localhost:3000/tasks/:id`, example `http://localhost:3000/tasks/12`
   - Request body:
   {
     "title": "Do something awesome",
@@ -114,5 +114,5 @@ Puede probar la aplicación utilizando los distintos endpoints y requests, asumi
 
 - **Delete a task**
   - Método: DELETE
-  - Endpoint: `http://localhost:3000/tasks/:id`, example `http://localhost:3000/tasks/1`
+  - Endpoint: `http://localhost:3000/tasks/:id`, example `http://localhost:3000/tasks/12`
   - Respuesta esperada: Si la tarea existe, se eliminará de la base de datos y retornará la tarea eliminada. En caso que no exista, retornará 404.
