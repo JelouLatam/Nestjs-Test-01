@@ -7,5 +7,6 @@ export default registerAs(
     type: 'sqlite',
     database: process.env.DATABASE_URI,
     autoLoadEntities: true,
+    synchronize: true,
   }),
 );

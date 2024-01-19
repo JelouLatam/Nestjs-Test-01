@@ -15,6 +15,13 @@ export class Task {
   @Column()
   description: string;
 
+  @ApiProperty({
+    description: 'Is the task complete or not',
+    default: false,
+  })
+  @Column()
+  isCompleted: boolean;
+
   @ApiProperty({ description: 'Date when the task was created' })
   @Column()
   creationDate: Date;
@@ -22,6 +29,14 @@ export class Task {
   @ApiProperty({ description: 'Date when the task was last modified' })
   @Column()
   updateDate: Date;
+
+  @ApiProperty({
+    description:
+      'If the task is completed, marks the date the task was completed',
+    required: false,
+  })
+  @Column({ nullable: true })
+  completeDate: Date;
 
   @ApiProperty({ description: 'Date when the task must be completed' })
   @Column()

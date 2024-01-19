@@ -1,6 +1,6 @@
 import { IsNotEmpty, IsDateString, MaxLength, Validate } from 'class-validator';
-import { NoPreviousDates } from 'src/validators/NoPreviousDates';
-import { NoWhitespaceString } from 'src/validators/NoWhitespaceString';
+import { NoPreviousDates } from 'src/validators/noPreviousDates';
+import { NoWhitespaceString } from 'src/validators/noWhitespaceString';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class CreateTaskDto {

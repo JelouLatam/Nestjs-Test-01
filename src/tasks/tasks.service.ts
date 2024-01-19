@@ -19,6 +19,7 @@ export class TasksService {
     taskToSave.description.trim();
     taskToSave.creationDate = new Date();
     taskToSave.updateDate = new Date();
+    taskToSave.isCompleted = false;
     return this.taskRepository.save(taskToSave);
   }
 
@@ -41,6 +42,9 @@ export class TasksService {
     }
     Object.assign(taskToUpdate, updateTaskDto);
     taskToUpdate.updateDate = new Date();
+    if (taskToUpdate.isCompleted) {
+      taskToUpdate.completeDate = new Date();
+    }
     return this.taskRepository.save(taskToUpdate);
   }
 

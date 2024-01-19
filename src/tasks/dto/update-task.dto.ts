@@ -1,8 +1,15 @@
 import { PartialType } from '@nestjs/mapped-types';
 import { CreateTaskDto } from './create-task.dto';
-import { IsNotEmpty, IsDateString, MaxLength, Validate } from 'class-validator';
-import { NoPreviousDates } from 'src/validators/NoPreviousDates';
-import { NoWhitespaceString } from 'src/validators/NoWhitespaceString';
+import {
+  IsNotEmpty,
+  IsDateString,
+  MaxLength,
+  IsBoolean,
+  Validate,
+  IsOptional,
+} from 'class-validator';
+import { NoPreviousDates } from 'src/validators/noPreviousDates';
+import { NoWhitespaceString } from 'src/validators/noWhitespaceString';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class UpdateTaskDto extends PartialType(CreateTaskDto) {
@@ -22,6 +29,15 @@ export class UpdateTaskDto extends PartialType(CreateTaskDto) {
   @IsNotEmpty()
   @Validate(NoWhitespaceString)
   description: string;
+
+  @ApiProperty({
+    description:
+      'Is the task completed or not. If provided, it should be a boolean, otherwise is not a valid value',
+  })
+  @IsNotEmpty()
+  @IsBoolean()
+  @IsOptional()
+  isCompleted: boolean;
 
   @ApiProperty({
     description:
