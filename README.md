@@ -61,7 +61,7 @@ Durante la revisión de tu proyecto, nos enfocaremos en los siguientes aspectos:
 
 ### Ejecución de la aplicación
 
-Primero, en la raíz del proyecto deberá crear el archivo .env y agregar en este lo siguiente:
+**IMPORTANTE:** Primero, en la raíz del proyecto deberá crear el archivo .env y agregar en este lo siguiente:
 
 - DATABASE_HOST='sqlite'
 - DATABASE_URI='db/Tasks.db'
