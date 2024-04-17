@@ -14,17 +14,23 @@ services:
     environment:
       NODE_ENV: development
       DATABASE_HOST: db
-      DATABASE_USER: root
-      DATABASE_PASSWORD: secret
+      DATABASE_USER: ${DB_USER}
+      DATABASE_PASSWORD: ${DB_PASSWORD}
       DATABASE_NAME: test_db
 
   db:
     image: mysql:8.0
     container_name: mysql_db
     environment: 
-      MYSQL_ROOT_PASSWORD: secrert
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
       MYSQL_DATABASE: test_db 
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
     ports:
       - "3306:3306"
+    volumes:
+      - ./mysql-init/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - mysql-data:/var/lib/mysql
 volumes:
   pnpm-store:
+  mysql-data:
