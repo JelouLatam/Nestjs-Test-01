@@ -1,58 +1,112 @@
-# Backend_Developer_Test_NestJS
 
-¡Bienvenido(a) a la prueba técnica para el puesto de Desarrollador Backend con NestJS! En esta prueba, evaluaremos tus habilidades en el desarrollo de aplicaciones utilizando NestJS, con un enfoque específico en diversos aspectos técnicos y de buenas prácticas.
+# Task API
+This is a technical test for JelouLatam. It is a CRUD application using the NestJS framework along with Docker and Docker Compose for deployment.
+## Documentation 
+### Create a Task 
+- Method: `POST` 
+- Endpoint: `/tasks`
+- Description: Creates a new task with the information in the body
+#### Example
+Request body: 
+```
+{
+  "title": "Buy milk",
+  "description": "Buy milk from the store",
+  "status": "pending"
+}
+```
+Response: 
+```
+{
+  "title": "Buy milk",
+  "description": "Buy milk from the store",
+  "status": "pending",
+  "id": 2
+}
+```
 
-## Descripción del proyecto
+### Retrieves all tasks
+- Method: `GET` 
+- Endpoint: `/tasks`
+- Description: Gets all tasks
+#### Example
+Response: 
+```
+[
+  {
+    "title": "Buy milk",
+    "description": "Buy milk from the store",
+    "status": "pending"
+  }
+]
+```
 
-El objetivo de este proyecto es desarrollar una API simple para gestionar una lista de tareas (to-do list) utilizando NestJS.
+### Retrieves a task by ID
+- Method: `GET` 
+- Endpoint: `/tasks/{id}`
+- Description: Get task by id
+#### Example
+Response: 
+```
+{
+  "title": "Buy milk",
+  "description": "Buy milk from the store",
+  "status": "pending"
+}
+```
 
-## Requisitos técnicos
+### Updates a task by ID
+- Method: `PUT` 
+- Endpoint: `/tasks/{id}`
+- Description: Update a task by id
+#### Example
+Request body:
+```
+{
+  "title": "Buy eggs",
+  "description": "Buy eggs from the local store",
+  "status": "completed"
+}
+```
+Response: 
+```
+{
+  "title": "Buy eggs",
+  "description": "Buy eggs from the local store",
+  "status": "completed"
+}
+```
 
-La aplicación debe ser desarrollada utilizando las siguientes tecnologías:
+### Deletes a task by ID
+- Method: `DELETE` 
+- Endpoint: `/tasks/{id}`
+- Description: Delete a task by id
+#### Example
+Response: 
+```
+{
+  "status": 200,
+  "message": "Task deleted"
+}
+```
+For more detailed documentation, visit SwaggerUI at `localhost:3000/api`
 
-- Framework: NestJS.
-- Lenguaje de programación: TypeScript.
-- Base de datos: Puedes utilizar cualquier base de datos de tu elección. (por ejemplo, SQLite)
-- Docker (Opcional).
+## Running the Application with Docker Compose
 
-El proyecto debe incluir:
+To launch the application using Docker Compose, follow these steps to ensure a smooth startup:
 
-- Un controlador para gestionar las operaciones CRUD de las tareas.
-- Un servicio que maneje la lógica de negocio relacionada con las tareas.
-- Validaciones para los datos de entrada en las solicitudes.
-- Middleware para registro de solicitudes.
-- Documentación API utilizando el módulo Swagger.
+### 1. Prerequisites:
+- Ensure Docker and Docker Compose are installed on your system. If you need to install these, visit the official Docker website for installation guides tailored to your operating system.
 
-### Puntos adicionales:
+### 2. Environment Config
+- Before running the application, you must create a .env file in the root directory of your project. This file should contain the necessary environment variables required by the application and Docker. Here’s an example of what your .env file should look like:
+```
+DB_USER=my_user # this can be whatever you want
+DB_PASSWORD=my_password
+```
 
-- Dockerización:
-  - Proporciona un archivo `Dockerfile` para construir la imagen de Docker de la aplicación NestJS.
-  - Proporciona un archivo `docker-compose.yml` para el despliegue local del microservicio.
-
-## Aspectos a evaluar
-
-Durante la revisión de tu proyecto, nos enfocaremos en los siguientes aspectos:
-
-1. **Correcto funcionamiento:** Verificaremos que la aplicación cumpla con los requisitos y funcione correctamente.
-2. **Eficiencia:** Evaluaremos la eficiencia del código, incluido el rendimiento y el manejo de recursos.
-3. **Lectura de código:** Revisaremos la legibilidad del código, la claridad en la estructura y la coherencia en las convenciones de nomenclatura.
-4. **Formateo y estilo del código:** Verificaremos el uso de herramientas como linter para mantener un código consistente y prettier para el formateo del mismo.
-5. **Organización del proyecto:** Evaluar la estructura y organización del código fuente.
-
-## Tareas a realizar
-
-1. Implementa el microservicio de gestión de tareas con las funcionalidades descritas anteriormente.
-2. **Opcional:** Crea un archivo `Dockerfile` para construir la imagen de Docker de la aplicación.
-3. **Opcional:** Crea un archivo `docker-compose.yml` para el despliegue local del microservicio.
-4. Realiza una revisión del código para evaluar la calidad de la lectura del mismo.
-5. Utiliza un linter y prettier para garantizar la calidad y estilo del código.
-6. Verifica el correcto funcionamiento de la aplicación.
-
-## Entrega de la prueba
-
-- El código fuente debe ser entregado mediante un pull request hacia la rama master de este repositorio.
-- El nombre de la rama debe seguir la siguiente convención `test/nombre-persona`
-- Agrega al final del archivo README.md instrucciones claras sobre cómo ejecutar y probar la aplicación.
-  - Además de la documentación necesaria para probar el API con ejemplos de request.
-
-¡Buena suerte y estamos ansiosos por revisar tu trabajo!
+### 3. Running the App
+- Open a terminal or command prompt in your project directory where the docker-compose.yml file is located.
+```
+docker compose up --build
+```
