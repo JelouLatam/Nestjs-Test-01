@@ -1,0 +1,46 @@
+version: '3.1'
+
+services:
+
+  nest-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+
+    depends_on:
+      - psql-db
+
+  psql-db:
+    image: postgres:12.1-alpine
+    ports:
+      - ${POSTGRES_PORT_EXTERNAL}:5432
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASS}
+      - POSTGRES_DB=${DB_NAME}
+    volumes:
+      - psql-db-data:/var/lib/postgresql/data
+    networks:
+      - ws-network
+  
+  pgadmin:
+    container_name: pgadmin4_container
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=${PGADMIN_DEFAULT_EMAIL}
+      - PGADMIN_DEFAULT_PASSWORD=${PGADMIN_DEFAULT_PASSWORD}
+      - PGADMIN_LISTEN_PORT=80
+    ports:
+      - ${PGADMIN_PORT}:80
+    depends_on:
+      - psql-db
+
+
+volumes:
+  psql-db-data:
+
+networks:
+  ws-network:

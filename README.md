@@ -1,58 +1,54 @@
-# Backend_Developer_Test_NestJS
+<p align="center">
+  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
+</p>
 
-¡Bienvenido(a) a la prueba técnica para el puesto de Desarrollador Backend con NestJS! En esta prueba, evaluaremos tus habilidades en el desarrollo de aplicaciones utilizando NestJS, con un enfoque específico en diversos aspectos técnicos y de buenas prácticas.
+[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
+[circleci-url]: https://circleci.com/gh/nestjs/nest
 
-## Descripción del proyecto
+  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
+    <p align="center">
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
+<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
+<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
+<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
+<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
+<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
+  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
+    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
+  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
+</p>
+  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
+  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-El objetivo de este proyecto es desarrollar una API simple para gestionar una lista de tareas (to-do list) utilizando NestJS.
+## Description
 
-## Requisitos técnicos
+[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-La aplicación debe ser desarrollada utilizando las siguientes tecnologías:
 
-- Framework: NestJS.
-- Lenguaje de programación: TypeScript.
-- Base de datos: Puedes utilizar cualquier base de datos de tu elección. (por ejemplo, SQLite)
-- Docker (Opcional).
 
-El proyecto debe incluir:
+## Running the app
 
-- Un controlador para gestionar las operaciones CRUD de las tareas.
-- Un servicio que maneje la lógica de negocio relacionada con las tareas.
-- Validaciones para los datos de entrada en las solicitudes.
-- Middleware para registro de solicitudes.
-- Documentación API utilizando el módulo Swagger.
+# watch mode
 
-### Puntos adicionales:
+configuration .env
+add to jwt-secret and time expiration token
 
-- Dockerización:
-  - Proporciona un archivo `Dockerfile` para construir la imagen de Docker de la aplicación NestJS.
-  - Proporciona un archivo `docker-compose.yml` para el despliegue local del microservicio.
+$ docker-composer up -d 
 
-## Aspectos a evaluar
+```
 
-Durante la revisión de tu proyecto, nos enfocaremos en los siguientes aspectos:
+## Support
 
-1. **Correcto funcionamiento:** Verificaremos que la aplicación cumpla con los requisitos y funcione correctamente.
-2. **Eficiencia:** Evaluaremos la eficiencia del código, incluido el rendimiento y el manejo de recursos.
-3. **Lectura de código:** Revisaremos la legibilidad del código, la claridad en la estructura y la coherencia en las convenciones de nomenclatura.
-4. **Formateo y estilo del código:** Verificaremos el uso de herramientas como linter para mantener un código consistente y prettier para el formateo del mismo.
-5. **Organización del proyecto:** Evaluar la estructura y organización del código fuente.
+Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
-## Tareas a realizar
+## Stay in touch
 
-1. Implementa el microservicio de gestión de tareas con las funcionalidades descritas anteriormente.
-2. **Opcional:** Crea un archivo `Dockerfile` para construir la imagen de Docker de la aplicación.
-3. **Opcional:** Crea un archivo `docker-compose.yml` para el despliegue local del microservicio.
-4. Realiza una revisión del código para evaluar la calidad de la lectura del mismo.
-5. Utiliza un linter y prettier para garantizar la calidad y estilo del código.
-6. Verifica el correcto funcionamiento de la aplicación.
+- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
+- Website - [https://nestjs.com](https://nestjs.com/)
+- Twitter - [@nestframework](https://twitter.com/nestframework)
 
-## Entrega de la prueba
+## License
 
-- El código fuente debe ser entregado mediante un pull request hacia la rama master de este repositorio.
-- El nombre de la rama debe seguir la siguiente convención `test/nombre-persona`
-- Agrega al final del archivo README.md instrucciones claras sobre cómo ejecutar y probar la aplicación.
-  - Además de la documentación necesaria para probar el API con ejemplos de request.
-
-¡Buena suerte y estamos ansiosos por revisar tu trabajo!
+Nest is [MIT licensed](LICENSE).
