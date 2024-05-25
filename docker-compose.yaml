@@ -1,0 +1,10 @@
+version: '1.0.0'
+
+services:
+  app:
+    container_name: nestjs_api
+    build: .
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=production

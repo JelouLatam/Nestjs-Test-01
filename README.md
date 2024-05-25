@@ -56,3 +56,121 @@ Durante la revisión de tu proyecto, nos enfocaremos en los siguientes aspectos:
   - Además de la documentación necesaria para probar el API con ejemplos de request.
 
 ¡Buena suerte y estamos ansiosos por revisar tu trabajo!
+
+
+
+## Instrucciones para ejecutar el proyecto
+
+Para ejecutar el proyecto, en primer lugar hay que instalar las dependencias de node con el siguiente comando:
+
+npm install
+
+PD: Se debe utilizar la version de node 20.13.1
+
+El proyecto se puede ejecutar de estas maneras:
+
+1. Utilizar el comando npm run start:prod
+
+2. Ejecutando el Dockerfile con el comando docker run -p 3000:3000 my-nestjs-app
+
+3. Ejecutando el docker-compose.yml con el comando docker-compose up --build
+
+Utilizando cualquiera de estas 3 opciones, la API se ejecuta en el puerto 3000
+
+
+## Que se desarrolló?
+
+- Controlador para gestionar las operaciones CRUD de las tareas para las Listas y Tareas.
+
+src/list/list.controller.ts
+src/task/task.controller.ts
+
+- Un servicio que maneje la lógica de negocio relacionada con las Listas y Tareas.
+
+src/task/task.service.ts
+src/list/list.service.ts
+
+- Validaciones para los datos de entrada en las solicitudes en los controladores de listas y tareas.
+
+src/task/dto/createUpdateTaskDTO.ts
+src/list/dto/createUpdateListDTO.ts
+
+- Middleware para registro de solicitudes.
+
+src/app.middleware.ts
+
+- Documentación API utilizando el módulo Swagger.
+src/main.ts
+
+
+## Cómo probar la API?
+
+**Controladores Task:**
+
+1. get http://localhost:3000/tasks
+GET ALL TASK
+  Params: N/A
+  Body: N/A
+
+2. post http://localhost:3000/tasks
+
+CREATE TASK
+  Params: N/A
+  Body: 
+  {
+    "title": "Task 4",
+    "description": "Description 4",
+    "listId": 2
+  }
+  
+3. put http://localhost:3000/tasks/:id
+
+  UPDATE TASK
+  Params: :id = 5
+  Body: 
+  {
+    "title": "Task 5 update",
+    "description": "Description added",
+    "isCompleted": false
+  }
+
+4. put http://localhost:3000/tasks/:id/complete
+COMPLETE TASK
+Params: :id = 5
+  Body: N/A
+
+5. delete http://localhost:3000/tasks/:id
+delete TASK
+Params: :id = 5
+  Body: N/A
+
+
+**Controladores LIST:**
+
+1. get http://localhost:3000/lists
+GET ALL LISTS
+  Params: N/A
+  Body: N/A
+
+2. post http://localhost:3000/lists
+
+CREATE LIST
+  Params: N/A
+  Body: 
+  {
+    "title": "Lista 3"
+}
+  
+3. put http://localhost:3000/lists/:id
+
+  UPDATE LIST
+  Params: :id = 3
+  Body: 
+  {
+    "title": "Lista 3 UPDATE"
+}
+
+4. delete http://localhost:3000/tasks/:id
+DELETE LIST
+Params: :id = 3
+  Body: N/A
