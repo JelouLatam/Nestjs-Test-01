@@ -56,3 +56,20 @@ Durante la revisión de tu proyecto, nos enfocaremos en los siguientes aspectos:
   - Además de la documentación necesaria para probar el API con ejemplos de request.
 
 ¡Buena suerte y estamos ansiosos por revisar tu trabajo!
+
+---
+
+## Pasos para la ejecución del API con Docker
+
+- Aceptar el pull request a la master en GitHub.
+- Clonar el repositorio de la master a la máquina local Windows donde se revisará la prueba.
+- Asegurarse de tener levantado Docker Desktop con sesión abierta en máquina local Windows.
+- Abrir el cmd o Power Shell en la ruta de la carpeta task_service del repositorio clonado.
+- Ejecutar el comando:
+  docker-compose up -d --build
+- Corroborar que el contenedor del servicio y el de la base de datos estén arriba con el comando:
+  docker ps
+- Abrir el navegador e ingresar a la ruta de la documentación Swagger para que puedan probar el API:
+  http://localhost:3000/api
+
+Gracias, saludos cordiales.
