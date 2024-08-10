@@ -1,0 +1,30 @@
+version: '3'
+services:
+  task_service:
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+    environment:
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: task_user
+      POSTGRES_PASSWORD: task_12345
+      POSTGRES_DB: task_service_db
+    command: npm run start:dev
+
+  postgres:
+    image: postgres:13
+    restart: always
+    environment:
+      POSTGRES_USER: task_user
+      POSTGRES_PASSWORD: task_12345
+      POSTGRES_DB: task_service_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
