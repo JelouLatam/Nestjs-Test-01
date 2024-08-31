@@ -1,4 +1,4 @@
-# Backend_Developer_Test_NestJS
+# Backend_Developer_NestJS_01
 
 ¡Bienvenido(a) a la prueba técnica para el puesto de Desarrollador Backend con NestJS! En esta prueba, evaluaremos tus habilidades en el desarrollo de aplicaciones utilizando NestJS, con un enfoque específico en diversos aspectos técnicos y de buenas prácticas.
 
