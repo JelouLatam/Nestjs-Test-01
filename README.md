@@ -56,3 +56,68 @@ Durante la revisión de tu proyecto, nos enfocaremos en los siguientes aspectos:
   - Además de la documentación necesaria para probar el API con ejemplos de request.
 
 ¡Buena suerte y estamos ansiosos por revisar tu trabajo!
+
+## Instrucciones de ejecución y pruebas de la aplicación
+
+### Ejecución de la aplicación
+
+**IMPORTANTE:** Primero, en la raíz del proyecto deberá crear el archivo .env y agregar en este lo siguiente:
+
+- DATABASE_HOST='sqlite'
+- DATABASE_URI='db/Tasks.db'
+
+Puede elegir entre desplegarla normalmente o desplegarla con Docker.
+
+- **Despliegue normal**: Una vez clonado el proyecto, ejecutar el comando `npm install` para instalar las dependencias. Luego de ello correr `npm run start` para iniciar la aplicación.
+
+- **Despliegue local con Docker**: Una vez clonado el proyecto, ejecutar el comando `docker compose up -d` para hacer la build de la imagen de Docker usando el Dockerfile previsto en el proyecyo e iniciar la aplicación en un contenedor.
+
+Ya habiendo iniciado la aplicación puede consultar la documentación de la API en la siguiente URL: `http://localhost:3000/api`.
+
+### Pruebas de la aplicación
+
+Puede probar la aplicación utilizando los distintos endpoints y requests, asumiento que ha lanzado la aplicación localmente, ya sea por despliegue normal o por Docker.
+
+- **GET all tasks**
+  - **Método**: GET
+  - **Endpoint**: `http://localhost:3000/tasks`
+  - **Respuesta esperada**: Debería esperearse la lista de tareas en la base de datos en formato json.
+  
+- **GET a task by id**
+  - **Método**: GET
+  - **Endpoint**: `http://localhost:3000/tasks/:id`, ejemplo: `http://localhost:3000/tasks/1`
+  - **Respuesta esperada**: Si la tarea existe, retornará la tarea encontrada en la base de datos. En caso contrario botará error 404.
+
+- **Create a new task**
+  - **Método**: POST
+  - **Endpoint**: `http://localhost:3000/tasks`
+  - **Request body**:
+  ```javascript
+  {
+    "title": "Wash Dishes",
+    "description": "Use different sponges for glasses and dishes in general.",
+    "dueDate": "2024-01-26"
+  }
+  ```
+  - **Respuesta esperada**: Se crea la tarea en la base de datos y la aplicación responde con la tarea recién agregada.
+  - **Notas**: Los campos no pueden estar vacíos o retornará error de Bad Request. El campo de dueDate debe estar en formato yyyy-mm-dd, y la fecha no puede ser igual o anterior a la fecha actual.
+
+- **Update a task**
+  - **Método**: PATCH
+  - **Endpoint**: `http://localhost:3000/tasks/:id`, ejemplo `http://localhost:3000/tasks/3`
+  - **Request body**:
+  ```javascript
+  {
+    "title": "Do something awesome",
+    "description": "Find something awesome to do and JUST DO IT!",
+    "isCompleted": true,
+    "dueDate": "2024-01-30"
+  }
+  ```
+  - **Respuesta** esperada: Se actualizará la tarea en la base de datos y la aplicación responde con la tarea recién actualizada si es que la tarea con dicho id existe. Caso contrario retornará 404.
+  - **Notas**: Los campos no pueden estar vacíos o retornará error de Bad Request. El campo de dueDate debe estar en formato yyyy-mm-dd, y la fecha no puede ser igual o anterior a la fecha actual.
+
+- **Delete a task**
+  - **Método**: DELETE
+  - **Endpoint**: `http://localhost:3000/tasks/:id`, ejemplo `http://localhost:3000/tasks/3`
+  - **Respuesta esperada**: Si la tarea existe, se eliminará de la base de datos y retornará la tarea eliminada. En caso que no exista, retornará 404.
