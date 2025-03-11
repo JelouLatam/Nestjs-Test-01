@@ -50,7 +50,7 @@ Durante la revisión de tu proyecto, nos enfocaremos en los siguientes aspectos:
 
 ## Entrega de la prueba
 
-- El código fuente debe ser entregado mediante un pull request hacia la rama master de este repositorio.
+- Entrega tu código fuente creando un fork del repositorio proporcionado para la prueba.
 - El nombre de la rama debe seguir la siguiente convención `test/nombre-persona`
 - Agrega al final del archivo README.md instrucciones claras sobre cómo ejecutar y probar la aplicación.
   - Además de la documentación necesaria para probar el API con ejemplos de request.
